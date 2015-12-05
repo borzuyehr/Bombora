@@ -1,0 +1,22 @@
+<section ng-controller="TrendsController" ng-init="findOne()">
+  <div class="page-header">
+    <h1 ng-bind="trend.topic"></h1>
+  </div>
+  <div class="pull-right" ng-show="authentication.user._id == article.user._id">
+    <a class="btn btn-primary" ui-sref="trends.edit({trendId: trend._id})">
+      <i class="glyphicon glyphicon-edit"></i>
+    </a>
+    <a class="btn btn-primary" ng-click="remove();">
+      <i class="glyphicon glyphicon-trash"></i>
+    </a>
+  </div>
+  <small>
+    <em class="text-muted">
+      Tracked on
+      <span ng-bind="trend.created | date:'mediumDate'"></span>
+      from
+      <span ng-bind="trend.user.displayName"></span>
+    </em>
+  </small>
+  <p class="lead" ng-bind="trend.strength"></p>
+</section>

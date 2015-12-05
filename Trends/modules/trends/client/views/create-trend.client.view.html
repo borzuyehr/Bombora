@@ -1,0 +1,38 @@
+<section ng-controller="TrendsController">
+  <div class="page-header">
+    <h1>New Trend</h1>
+  </div>
+  <div class="col-md-12">
+    <form name="trendForm" class="form-horizontal" ng-submit="create(trendForm.$valid)" novalidate>
+      <fieldset>
+        <div class="form-group" show-errors>
+          <label for="topic">Topic</label>
+          <input name="topic" type="text" ng-model="topic" id="topic" class="form-control" placeholder="Topic" required>
+          <div ng-messages="trendForm.topic.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Trend topic is required.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label for="state">State</label>
+          <input name="state" type="text" ng-model="state" id="state" class="form-control" placeholder="State" required>
+          <div ng-messages="trendForm.state.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Trend state is required.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label for="strength">Strength</label>
+          <input name="strength" type="text" ng-model="strength" id="strength" class="form-control" placeholder="Strength" required>
+          <div ng-messages="trendForm.strength.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Trend strength is required.</p>
+          </div>
+        </div>
+        <div class="form-group">
+          <input type="submit" class="btn btn-default">
+        </div>
+        <div ng-show="error" class="text-danger">
+          <strong ng-bind="error"></strong>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</section>
