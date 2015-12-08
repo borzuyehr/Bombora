@@ -23,7 +23,7 @@ angular.module('trends').config(['$stateProvider',
       })
       .state('trends.view', {
         url: '/:trendId',
-        templateUrl: 'modules/trend/client/views/view-trend.client.view.html'
+        templateUrl: 'modules/trends/client/views/view-trend.client.view.html'
       })
       .state('trends.edit', {
         url: '/:trendId/edit',
