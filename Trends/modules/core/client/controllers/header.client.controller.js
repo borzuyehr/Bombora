@@ -1,5 +1,6 @@
 'use strict';
 
+// Module to control the view of the header
 angular.module('core').controller('HeaderController', ['$scope', '$state', 'Authentication', 'Menus',
   function ($scope, $state, Authentication, Menus) {
     

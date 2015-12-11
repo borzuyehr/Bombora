@@ -1,5 +1,7 @@
 'use strict';
 
+// Set up routing for the user states
+
 // Setting up route
 angular.module('users.admin.routes').config(['$stateProvider',
   function ($stateProvider) {

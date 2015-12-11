@@ -1,5 +1,5 @@
 'use strict';
-
+// Set up user list handling for administrators
 angular.module('users.admin').controller('UserListController', ['$scope', '$filter', 'Admin',
   function ($scope, $filter, Admin) {
     Admin.query(function (data) {

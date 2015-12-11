@@ -1,5 +1,7 @@
 'use strict';
 
+/* Run tests on server configurations
+
 /**
  * Module dependencies.
  */

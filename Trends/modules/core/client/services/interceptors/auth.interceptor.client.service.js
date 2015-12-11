@@ -1,5 +1,6 @@
 'use strict';
 
+// Create intercept if the client does not have authorization
 angular.module('core').factory('authInterceptor', ['$q', '$injector',
   function ($q, $injector) {
     return {
