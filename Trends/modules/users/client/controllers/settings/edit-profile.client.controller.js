@@ -1,5 +1,6 @@
 'use strict';
 
+// Set up edit profile handler
 angular.module('users').controller('EditProfileController', ['$scope', '$http', '$location', 'Users', 'Authentication',
   function ($scope, $http, $location, Users, Authentication) {
     $scope.user = Authentication.user;

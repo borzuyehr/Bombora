@@ -1,5 +1,7 @@
 'use strict';
 
+// Run tests on the client menus
+
 (function() {
   describe('Menus', function() {
     //Initialize global variables
@@ -13,6 +15,7 @@
       Menus = _Menus_;
     }));
 
+    // Set up requirements
     it('should have topbar added', function() {
       expect(Menus.menus.topbar).toBeDefined();
     });

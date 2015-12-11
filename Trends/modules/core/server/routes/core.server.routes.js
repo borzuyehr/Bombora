@@ -1,5 +1,7 @@
 'use strict';
 
+// Handling all application routing for the server
+
 module.exports = function (app) {
   // Root routing
   var core = require('../controllers/core.server.controller');

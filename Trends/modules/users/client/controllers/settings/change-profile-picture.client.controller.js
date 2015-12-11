@@ -1,5 +1,6 @@
 'use strict';
 
+// Set up handling for user picture uploading
 angular.module('users').controller('ChangeProfilePictureController', ['$scope', '$timeout', '$window', 'Authentication', 'FileUploader',
   function ($scope, $timeout, $window, Authentication, FileUploader) {
     $scope.user = Authentication.user;
