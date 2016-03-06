@@ -1,5 +1,6 @@
 'use strict';
 
+// Create handling for user password strength
 angular.module('users')
   .directive('passwordValidator', ['PasswordValidator', function(PasswordValidator) {
     return {

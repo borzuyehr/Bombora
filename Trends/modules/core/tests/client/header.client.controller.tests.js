@@ -1,5 +1,7 @@
 'use strict';
 
+// Create the navbar requirements 
+
 (function () {
   describe('HeaderController', function () {
     //Initialize global variables

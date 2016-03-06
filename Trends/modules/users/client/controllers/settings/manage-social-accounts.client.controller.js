@@ -1,5 +1,6 @@
 'use strict';
 
+// Set up social media accounts for client
 angular.module('users').controller('SocialAccountsController', ['$scope', '$http', 'Authentication',
   function ($scope, $http, Authentication) {
     $scope.user = Authentication.user;

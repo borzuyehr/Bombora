@@ -1,5 +1,7 @@
 'use strict';
 
+// Create application rendering ased on states
+
 /**
  * Render the main application page
  */

@@ -1,8 +1,10 @@
 'use strict';
 
 /**
- * Edits by Ryan Hutchison
- * Credit: https://github.com/paulyoder/angular-bootstrap-show-errors */
+ * Directive to show the errors for invalid form fields
+ * Part of Angular Bootstrap 3
+ * Credit to: https://github.com/paulyoder/angular-bootstrap-show-errors
+  */
 
 angular.module('core')
   .directive('showErrors', ['$timeout', '$interpolate', function ($timeout, $interpolate) {

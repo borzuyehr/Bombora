@@ -1,5 +1,7 @@
 'use strict';
 
+// Run client controller testing and requirements
+
 (function () {
   describe('HomeController', function () {
     //Initialize global variables

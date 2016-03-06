@@ -1,6 +1,6 @@
 'use strict';
 
-// Setting up route
+// Setting up route for home web-app and bad requests
 angular.module('core').config(['$stateProvider', '$urlRouterProvider',
   function ($stateProvider, $urlRouterProvider) {
 
