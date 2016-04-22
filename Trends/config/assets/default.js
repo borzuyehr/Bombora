@@ -19,9 +19,7 @@ module.exports = {
         'public/lib/angular-bootstrap/ui-bootstrap-tpls.js',
         'public/lib/angular-file-upload/angular-file-upload.js',
         'public/lib/owasp-password-strength-test/owasp-password-strength-test.js',
-        'public/lib/d3/d3.js',
-        'public/lib/nvd3/build/nv.d3.js',
-        'public/lib/angular-nvd3/dist/angular-nvd3.js'
+        'public/lib/d3/d3.js'
 
       ],
       tests: ['public/lib/angular-mocks/angular-mocks.js']
