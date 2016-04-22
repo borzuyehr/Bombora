@@ -8,7 +8,7 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
     $scope.createDummyData = function () {
       var dataTemp = {};
       angular.forEach(states, function (state, key) {
-        dataTemp[state] = { value: Math.random() };
+        dataTemp[state] = { value: Math.random()*100 };
       });
       $scope.dummyData = dataTemp;
     };
@@ -57,7 +57,7 @@ angular.module('core').directive('region', ['$compile', function ($compile) {
         element[0].parentNode.appendChild(element[0]);
       };
       element.attr('ng-click', 'regionClick()');
-      element.attr('ng-attr-fill', '{{dummyData[elementId].value | map_colour}}');
+      element.attr('ng-attr-fill', '{{dummyData[elementId].value/100 | map_colour}}');
       element.attr('ng-mouseover', 'regionMouseOver()');
       element.attr('ng-class', '{active:hoverRegion==elementId}');
       element.removeAttr('region');

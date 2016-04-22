@@ -39,8 +39,7 @@ a:hover .header-profile-image {
 svg .state {
     stroke-width: 2;
     opacity: 1;
-    stroke: #fff;
-    transform: scale(1);
+    stroke: #000;
     -moz-transition: stroke 0.5s, stroke-width 0.5s;
     -webkit-transition: stroke 0.5s, stroke-width 0.5s;
     -o-transition: stroke 0.5s, stroke-width 0.5s;
@@ -48,13 +47,13 @@ svg .state {
 }
 svg .state:hover , .state.active {
     cursor: pointer;
-    stroke-width: 1.5;
+    stroke-width: 2;
     stroke: #000;
-    
 }
 svg path:hover , path.active { 
     cursor: pointer;
-    opacity: 1;   
+    opacity: 1; 
+    fill: lightblue;
 }
 .regionlist {
     -ms-column-count: 5;
