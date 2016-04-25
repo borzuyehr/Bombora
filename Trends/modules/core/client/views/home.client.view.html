@@ -1,0 +1,147 @@
+<section ng-controller="HomeController">
+
+<meta charset="utf-8">  <!-- it's important for d3.js -->
+<script src="public/lib/angular/angular.js"></script>
+<script src="public/lib/d3/d3.js"></script>
+<script src="public/lib/nvd3/build/nv.d3.js"></script> <!-- or use another assembly -->
+<script src="public/lib/angular-nvd3/dist/angular-nvd3.js"></script>
+<link rel="stylesheet" href="public/lib/nvd3/build/nv.d3.css">
+
+  <div class="jumbotron text-center">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-12">
+        <img alt="MEAN.JS" class="img-responsive text-center" src="modules/core/client/img/brand/TrendLogo.gif" />
+      </div>
+    </div>
+    <br>
+
+
+
+    <br>
+    <br>
+
+    <div class="row">
+      <p class="lead">
+        Real-Time Application For The Visualization of Business Trends
+      </p>
+    </div>
+    <div class="row">
+      <p>
+        <a class="btn btn-primary btn-lg" href="http://bombora.com/data/" target="_blank">Learn more</a>
+      </p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+        <div class="text-center">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel panel-body">
+                    <div svgmap></div>
+                    <div class="scale"> 
+                      <div ng-repeat="n in [0,10,20,30,40,50,60,70,80,90,100]"
+                           ng-style="{backgroundColor:'{{n/'100' | map_colour}}'}">{{n}}
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <label for="trends">Select a trend: </label>
+            <select name="trends" id="trends">
+              <option value="database-development">Database Development</option>
+              <option value="wireless-service-providers">Wireless Service Providers</option>
+              <option value="health-analytics">Health Analytics</option>
+              <option value="it-management">IT Management</option>
+              <option value="anti-virus">Anti Virus</option>
+            </select>
+        </div>
+        </div>
+   
+    <div class="col-md-6">    
+    
+    <div class="panel panel-default">
+       <div class="panel panel-body">
+          <div class="regionlist">
+             <div ng-repeat="(key,region) in dummyData" 
+                  ng-class="{active:hoverRegion==key}" 
+                  ng-mouseover="changeHoverRegion(key)">
+                  <div>{{key}}</div>
+                  <div>{{region.value | number}}</div>
+
+              </div>
+          </div>
+        </div>
+    </div>
+   </div>
+  </div>
+   <p>
+        <button ng-click="createDummyData()" class="btn btn-block btn-default">Update To Current Trend Values</button>
+    </p>
+  </div>  
+
+<div>
+  <nvd3 options="options" data="data"></nvd3>
+</div>
+
+  <div>
+    <h2>Shown below is a graphical representation of the trend data.</h2>
+    <p>Trend data refers to the activity of companies searching for a certain topic.</p>
+    <p>This sample application tracks topics.</p>
+    <ul>
+      <li>
+        Topic One
+      </li>
+      <li>
+        Topic Two
+      </li>
+      <li>
+        Topic Three
+      </li>
+      <li>
+        Topic Four
+      </li>
+      <li>
+        Topic Five
+      </li>
+    </ul>
+  </div>
+
+<!--
+  <div class="row">
+    <div class="col-md-3">
+      <h2><strong>M</strong>ongoDB</h2>
+      <p><a target="_blank" href="http://mongodb.org/">MongoDB</a> is a NoSQL database. MongoDB's <a target="_blank" href="http://docs.mongodb.org/manual/">great manual</a> is the place to get started with NoSQL and MongoDB.</p>
+    </div>
+    <div class="col-md-3">
+      <h2><strong>E</strong>xpress</h2>
+      <p><a target="_blank" href="http://expressjs.com/"> Express</a> is a NodeJS server-side application web framework. Check out <a target="_blank" href="http://expressjs.com/4x/api.html">The ExpressJS API reference for more information</a> or <a target="_blank" href="http://stackoverflow.com/questions/8144214/learning-express-for-node-js">StackOverflow</a> for more info.</p>
+    </div>
+    <div class="col-md-3">
+      <h2><strong>A</strong>ngularJS</h2>
+      <p><a target="_blank" href="http://angularjs.org/">AngularJS</a> is client-side web application framework. The <a target="_blank" href="http://www.thinkster.io/">Thinkster Popular Guide</a> and <a target="_blank" href="https://egghead.io/">Egghead Videos</a> are great resources.</p>
+    </div>
+    <div class="col-md-3">
+      <h2><strong>N</strong>ode.js</h2>
+      <p><a target="_blank" href="http://nodejs.org/">Node.js</a> is a JavaScript run-time, popular for being a web server platform. Node's website and this <a target="_blank" href="http://stackoverflow.com/questions/2353818/how-do-i-get-started-with-node-js">stackOverflow thread</a> offer excellent starting points to get to grasps with node.</p>
+    </div>
+  </div>
+-->
+
+  <div class="well">
+    <h2>Trend Application Documentation</h2>
+    <p>
+      Further Reading:
+      <ul>
+        <li>Concept Report
+        </li>
+        <li>Specification Paper
+        </li>
+        <li>Design Documentation
+        </li>
+      </ul>
+    </p>
+  </div>
+  <br>Sharing is winning!
+  <br>Team Six
+</section>
