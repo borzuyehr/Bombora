@@ -36,3 +36,52 @@ a:hover .header-profile-image {
   display: inline;
 }
 
+svg .state {
+    stroke-width: 2;
+    opacity: 1;
+    stroke: #000;
+    -moz-transition: stroke 0.5s, stroke-width 0.5s;
+    -webkit-transition: stroke 0.5s, stroke-width 0.5s;
+    -o-transition: stroke 0.5s, stroke-width 0.5s;
+    transition: stroke 0.5s, stroke-width 0.5s;
+}
+svg .state:hover , .state.active {
+    cursor: pointer;
+    stroke-width: 2;
+    stroke: #000;
+}
+svg path:hover , path.active { 
+    cursor: pointer;
+    opacity: 1; 
+    fill: lightblue;
+}
+.regionlist {
+    -ms-column-count: 5;
+    -webkit-column-count: 5; /* Chrome, Safari, Opera */
+    -moz-column-count: 5; /* Firefox */
+    column-count: 5;
+}
+.regionlist > div {
+    display: inline-block;
+    width: 100%;
+    border-bottom: 1px solid grey;
+}
+.regionlist > div > div {
+    display: inline-block;
+    width: 48%;
+}
+.regionlist > div.active {
+    font-weight: bold;
+    background-color: lightblue;
+}
+.scale {
+    position: relative;
+}
+.scale div {
+    width: 9.07%;
+    display: inline-block;
+    text-align: center;
+    color: #000;
+    font-weight: bold;
+    padding: 5px 0;
+}
