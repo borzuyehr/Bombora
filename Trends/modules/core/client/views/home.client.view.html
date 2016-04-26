@@ -35,6 +35,7 @@
   <div class="container">
     <div class="row">
         <div class="text-center">
+        <h2>Trend data represented as a heat map</h2>  
         <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel panel-body">
@@ -63,7 +64,7 @@
     <div class="panel panel-default">
        <div class="panel panel-body">
           <div class="regionlist">
-             <div ng-repeat="(key,region) in dummyData" 
+             <div ng-repeat="(key,region) in dummyData"
                   ng-class="{active:hoverRegion==key}" 
                   ng-mouseover="changeHoverRegion(key)"
                   ng-mouseleave="changeHoverRegion(0)">
@@ -77,40 +78,20 @@
    </div>
   </div>
    <p>
-        <button ng-click="createDummyData()" class="btn btn-block btn-default">Update To Current Trend Values</button>
+        <button ng-click="createDummyData()" class="btn btn-block btn-default" type="button">Update To Current Trend Values</button>
     </p>
   </div>  
 
-<section ng-controller="GraphController">
-<div class="jumbotron text-center">
- <canvas id="bar" height="50" width="50" class="chart chart-bar"
-  chart-data="data" chart-labels="labels" chart-series="series">
- </canvas> 
-</div>
-</section>
 
-  <div>
-    <h2>Shown below is a graphical representation of the trend data.</h2>
-    <p>Trend data refers to the activity of companies searching for a certain topic.</p>
-    <p>This sample application tracks topics.</p>
-    <ul>
-      <li>
-        Topic One
-      </li>
-      <li>
-        Topic Two
-      </li>
-      <li>
-        Topic Three
-      </li>
-      <li>
-        Topic Four
-      </li>
-      <li>
-        Topic Five
-      </li>
-    </ul>
+  <div class="text-center">
+    <div class="container">
+    <h2>Trend data represented as a bar graph</h2>
+    <canvas id="tables" height="100" width="200" class="chart chart-bar" chart-data="chartData" chart-labels="labels" chart-series="series" options="options">
+    </canvas> 
+    </div>
   </div>
+
+
 
 <!--
   <div class="row">

@@ -4,22 +4,40 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
   function ($scope, Authentication) {
     // This provides Authentication context.
     $scope.authentication = Authentication;
-    var states = ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY'];
+    var states = ['AK', 'AL', 'AR', 'AZ', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'IA', 'ID', 'IL', 'IN', 'KS', 'KY', 'LA', 'MA', 'MD', 'ME', 'MI', 'MN', 'MO', 'MS', 'MT', 'NC', 'ND', 'NE', 'NH', 'NJ', 'NM', 'NV', 'NY', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VA', 'VT', 'WA', 'WI', 'WV', 'WY'];
+    $scope.chartData = [[50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50]];
     $scope.createDummyData = function () {
       var dataTemp = {};
+      var dataTemp2 = [];
+      
       angular.forEach(states, function (state, key) {
         dataTemp[state] = { value: Math.random()*100 };
+        
+      
       });
       $scope.dummyData = dataTemp;
+      $scope.chartData = [[$scope.dummyData.AK.value, $scope.dummyData.AL.value, $scope.dummyData.AR.value, $scope.dummyData.AZ.value, $scope.dummyData.CA.value, $scope.dummyData.CO.value, $scope.dummyData.CT.value, $scope.dummyData.DE.value, $scope.dummyData.FL.value, $scope.dummyData.GA.value,
+                           $scope.dummyData.HI.value, $scope.dummyData.IA.value, $scope.dummyData.ID.value, $scope.dummyData.IL.value, $scope.dummyData.IN.value, $scope.dummyData.KS.value, $scope.dummyData.KY.value, $scope.dummyData.LA.value, $scope.dummyData.MA.value, $scope.dummyData.MD.value,
+                           $scope.dummyData.ME.value, $scope.dummyData.MI.value, $scope.dummyData.MN.value, $scope.dummyData.MO.value, $scope.dummyData.MS.value, $scope.dummyData.MT.value, $scope.dummyData.NC.value, $scope.dummyData.ND.value, $scope.dummyData.NE.value, $scope.dummyData.NH.value,
+                           $scope.dummyData.NJ.value, $scope.dummyData.NM.value, $scope.dummyData.NV.value, $scope.dummyData.NY.value, $scope.dummyData.OH.value, $scope.dummyData.OK.value, $scope.dummyData.OR.value, $scope.dummyData.PA.value, $scope.dummyData.RI.value, $scope.dummyData.SC.value,
+                           $scope.dummyData.SD.value, $scope.dummyData.TN.value, $scope.dummyData.TX.value, $scope.dummyData.UT.value, $scope.dummyData.VA.value, $scope.dummyData.VT.value, $scope.dummyData.WA.value, $scope.dummyData.WI.value, $scope.dummyData.WV.value, $scope.dummyData.WY.value]];
     };
     $scope.createDummyData();
+
+
 
     $scope.changeHoverRegion = function (region) {
       $scope.hoverRegion = region;
     };
 
-    $scope.options = {};
-    $scope.data = {};
+    $scope.options = {
+      scaleLabel : function (label) {
+        return ' ' + label.value;  
+      } 
+
+    };
+    $scope.labels = states;
+    $scope.series = ['Composite Score'];    
   }
 ]);
 
@@ -77,22 +95,3 @@ angular.module('core').filter('map_colour', [function () {
     return 'rgba(255,' + g + ',' + b + ',1)';
   };
 }]);
-
-angular.module('core').controller('GraphController',
-  function ($scope) {
-    $scope.labels = ['AK', 'AL', 'AR', 'AZ', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA',
-                     'HI', 'IA', 'ID', 'IL', 'IN', 'KS', 'KY', 'LA', 'MA', 'MD',
-                     'ME', 'MI', 'MN', 'MO', 'MS', 'MT', 'NC', 'ND', 'NE', 'NH',
-                     'NJ', 'NM', 'NV', 'NY', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC',
-                     'SD', 'TN', 'TX', 'UT', 'VA', 'VT', 'WA', 'WI', 'WV', 'WY'];
-    $scope.series = ['Series A'];
-    $scope.data = [
-      [65, 59, 80, 81, 56, 55, 40, 33, 90, 14,
-       15, 29, 34, 73, 53, 55, 40, 33, 90, 14,
-       65, 59, 80, 81, 56, 55, 40, 33, 90, 14,
-       65, 59, 80, 81, 56, 55, 40, 33, 90, 14,
-       65, 59, 80, 81, 56, 55, 40, 33, 90, 14]
-    ];
-  });
-
-
