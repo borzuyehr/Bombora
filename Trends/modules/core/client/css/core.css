@@ -49,11 +49,11 @@ svg .state:hover , .state.active {
     cursor: pointer;
     stroke-width: 2;
     stroke: #000;
+    fill: lightblue;
 }
 svg path:hover , path.active { 
     cursor: pointer;
     opacity: 1; 
-    fill: lightblue;
 }
 .regionlist {
     -ms-column-count: 5;

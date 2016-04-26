@@ -80,9 +80,13 @@
     </p>
   </div>  
 
+<section ng-controller="GraphController">
 <div>
-  <nvd3 options="options" data="data"></nvd3>
+ <canvas id="bar" class="chart chart-bar"
+  chart-data="data" chart-labels="labels" chart-series="series">
+ </canvas> 
 </div>
+</section>
 
   <div>
     <h2>Shown below is a graphical representation of the trend data.</h2>
