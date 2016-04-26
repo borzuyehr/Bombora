@@ -68,7 +68,7 @@ angular.module('core').directive('region', ['$compile', function ($compile) {
     link: function (scope, element, attrs) {
       scope.elementId = element.attr('id');
       scope.regionClick = function () {
-        alert(scope.dummyData[scope.elementId].value);
+        alert(scope.elementId + ' Composite Score: ' + scope.dummyData[scope.elementId].value);
       };
       scope.regionMouseOver = function () {
         scope.hoverRegion = scope.elementId;
