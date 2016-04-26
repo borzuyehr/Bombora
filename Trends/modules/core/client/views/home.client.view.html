@@ -66,7 +66,7 @@
              <div ng-repeat="(key,region) in dummyData" 
                   ng-class="{active:hoverRegion==key}" 
                   ng-mouseover="changeHoverRegion(key)"
-                  >
+                  ng-mouseleave="changeHoverRegion(0)">
                   <div>{{key}}</div>
                   <div>{{region.value | number}}</div>
 
