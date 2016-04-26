@@ -65,7 +65,8 @@
           <div class="regionlist">
              <div ng-repeat="(key,region) in dummyData" 
                   ng-class="{active:hoverRegion==key}" 
-                  ng-mouseover="changeHoverRegion(key)">
+                  ng-mouseover="changeHoverRegion(key)"
+                  >
                   <div>{{key}}</div>
                   <div>{{region.value | number}}</div>
 
@@ -81,8 +82,8 @@
   </div>  
 
 <section ng-controller="GraphController">
-<div>
- <canvas id="bar" class="chart chart-bar"
+<div class="jumbotron text-center">
+ <canvas id="bar" height="50" width="50" class="chart chart-bar"
   chart-data="data" chart-labels="labels" chart-series="series">
  </canvas> 
 </div>
