@@ -5,11 +5,11 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
     // This provides Authentication context.
     $scope.authentication = Authentication;
     $scope.trendoptions = {
-      trend1 : "Database Development",
-      trend2 : "Wireless Service Provider",
-      trend3 : "Health Analytics",
-      trend4 : "IT management",
-      trend5 : "Anti Virus"
+      trend1 : 'Database Development',
+      trend2 : 'Wireless Service Provider',
+      trend3 : 'Health Analytics',
+      trend4 : 'IT management',
+      trend5 : 'Anti Virus'
     };
     $scope.selectedtrend = $scope.trendoptions.trend1;
 

@@ -47,9 +47,10 @@
                     </div>
                 </div>
             </div>
-
-            <label for="trends">Select a trend: </label>
-            <select ng-model="selectedtrend" ng-options="y for (x, y) in trendoptions" ng-change="createDummyData()"> 
+            <br>
+            <br>
+            <label for="trends" style="font-family:verdana;">Select a trend: </label>
+            <select name="trends" id="trends" ng-model="selectedtrend" ng-options="y for (x, y) in trendoptions" ng-change="createDummyData()"> 
             </select>
         </div>
         </div>
@@ -63,8 +64,8 @@
                   ng-class="{active:hoverRegion==key}" 
                   ng-mouseover="changeHoverRegion(key)"
                   ng-mouseleave="changeHoverRegion(0)">
-                  <div>{{key}}</div>
-                  <div>{{region.value | number:0}}</div>
+                  <div>{{key}}: </div>
+                  <div>{{region.value}}</div>
 
               </div>
           </div>
@@ -120,7 +121,10 @@
         </li>
       </ul>
     </p>
+    <br>Sharing is winning!
+    <br>Team Six
+    <br>
+    <br>
+    <a class="btn btn-primary btn-lg" href="http://datasurj.com" target="_blank">Team Website</a>
   </div>
-  <br>Sharing is winning!
-  <br>Team Six
 </section>
