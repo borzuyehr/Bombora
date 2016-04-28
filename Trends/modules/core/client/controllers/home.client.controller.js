@@ -4,6 +4,14 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
   function ($scope, Authentication) {
     // This provides Authentication context.
     $scope.authentication = Authentication;
+    $scope.trendoptions = {
+      trend1 : "Database Development",
+      trend2 : "Wireless Service Provider",
+      trend3 : "Health Analytics",
+      trend4 : "IT management",
+      trend5 : "Anti Virus"
+    };
+    $scope.selectedtrend = $scope.trendoptions.trend1;
 
     var states = ['AK', 'AL', 'AR', 'AZ', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'IA', 'ID', 'IL', 'IN', 'KS', 'KY', 'LA', 'MA', 'MD', 'ME', 'MI', 'MN', 'MO', 'MS', 'MT', 'NC', 'ND', 'NE', 'NH', 'NJ', 'NM', 'NV', 'NY', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VA', 'VT', 'WA', 'WI', 'WV', 'WY'];
     $scope.chartData = [[50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50,50]];
@@ -11,7 +19,7 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
       var dataTemp = {};
       
       angular.forEach(states, function (state, key) {
-        dataTemp[state] = { value: Math.round(Math.random()*100 )};
+        dataTemp[state] = { value: Math.round(Math.random()*100) };
         
       
       });
@@ -23,8 +31,6 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
                            $scope.dummyData.SD.value, $scope.dummyData.TN.value, $scope.dummyData.TX.value, $scope.dummyData.UT.value, $scope.dummyData.VA.value, $scope.dummyData.VT.value, $scope.dummyData.WA.value, $scope.dummyData.WI.value, $scope.dummyData.WV.value, $scope.dummyData.WY.value]];
     };
     $scope.createDummyData();
-
-
 
     $scope.changeHoverRegion = function (region) {
       $scope.hoverRegion = region;
