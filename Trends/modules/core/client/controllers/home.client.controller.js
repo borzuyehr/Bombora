@@ -20,8 +20,6 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
       
       angular.forEach(states, function (state, key) {
         dataTemp[state] = { value: Math.round(Math.random()*100) };
-        
-      
       });
       $scope.dummyData = dataTemp;
       $scope.chartData = [[$scope.dummyData.AK.value, $scope.dummyData.AL.value, $scope.dummyData.AR.value, $scope.dummyData.AZ.value, $scope.dummyData.CA.value, $scope.dummyData.CO.value, $scope.dummyData.CT.value, $scope.dummyData.DE.value, $scope.dummyData.FL.value, $scope.dummyData.GA.value,
@@ -36,6 +34,7 @@ angular.module('core').controller('HomeController', ['$scope', 'Authentication',
                            $scope.dummyData.SD.value, $scope.dummyData.TN.value, $scope.dummyData.TX.value, $scope.dummyData.UT.value, $scope.dummyData.VA.value, $scope.dummyData.VT.value, $scope.dummyData.WA.value, $scope.dummyData.WI.value, $scope.dummyData.WV.value, $scope.dummyData.WY.value];
     };
     $scope.createDummyData();
+    
 
     $scope.changeHoverRegion = function (region) {
       $scope.hoverRegion = region;
