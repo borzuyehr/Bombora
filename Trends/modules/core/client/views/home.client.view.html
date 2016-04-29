@@ -59,11 +59,14 @@
                           <div class="panel panel-default">
                               <div class="panel panel-body">
                                   <div svgmap></div>
+                                  <br>
+                                  <p>Composite Score Scale:</p>
                                   <div class="scale"> 
                                     <div ng-repeat="n in [0,10,20,30,40,50,60,70,80,90,100]"
                                          ng-style="{backgroundColor:'{{n/'100' | map_colour}}'}">{{n}}
                                     </div>
                                   </div>
+                                  
                               </div>
                           </div>
                       </div>
