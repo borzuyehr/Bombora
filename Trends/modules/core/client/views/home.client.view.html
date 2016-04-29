@@ -33,59 +33,158 @@
   </div>
 
   <div class="container">
-    <div class="row">
-        <div class="text-center">
-        <h2 style="font-family:verdana;" >Trend data represented as a heat map</h2>  
-        <div class="col-md-6">
-            <div class="panel panel-default">
-                <div class="panel panel-body">
-                    <div svgmap></div>
-                    <div class="scale"> 
-                      <div ng-repeat="n in [0,10,20,30,40,50,60,70,80,90,100]"
-                           ng-style="{backgroundColor:'{{n/'100' | map_colour}}'}">{{n}}
-                      </div>
-                    </div>
-                </div>
-            </div>
-            <br>
-            <br>
-            <label for="trends" style="font-family:verdana;">Select a trend: </label>
-            <select name="trends" id="trends" ng-model="selectedtrend" ng-options="y for (x, y) in trendoptions" ng-change="createDummyData()"> 
-            </select>
-        </div>
-        </div>
-   
-    <div class="col-md-6">    
-    
-    <div class="panel panel-default">
-       <div class="panel panel-body">
-          <div class="regionlist">
-             <div ng-repeat="(key,region) in dummyData"
-                  ng-class="{active:hoverRegion==key}" 
-                  ng-mouseover="changeHoverRegion(key)"
-                  ng-mouseleave="changeHoverRegion(0)">
-                  <div>{{key}}: </div>
-                  <div>{{region.value}}</div>
 
-              </div>
-          </div>
-        </div>
-    </div>
-   </div>
-  </div>
-   <p>
-        
-    </p>
   </div>  
 
 
-  <div class="text-center">
-    <div class="container">
-    <h2 style="font-family:verdana;">Trend data represented as a bar graph</h2>
-    <canvas id="tables" height="100" width="200" class="chart chart-bar" chart-data="chartData" chart-labels="labels" chart-series="series" options="options">
-    </canvas> 
-    </div>
-  </div>
+  
+  
+
+
+
+<md-content>
+    <md-tabs md-dynamic-height="" md-border-bottom="">
+      <md-tab label="Heat Map">
+        <md-content class="md-padding">
+          <h1 class="md-display-2">Heat Map</h1>
+          <p>
+            <div class="jumbotron text-center">
+              <div class="container">
+                    <div class="row">
+                      <div class="text-center">
+                      <h2 style="font-family:verdana;" >Trend data represented as a heat map</h2>  
+                      <div class="col-md-7">
+                          <div class="panel panel-default">
+                              <div class="panel panel-body">
+                                  <div svgmap></div>
+                                  <div class="scale"> 
+                                    <div ng-repeat="n in [0,10,20,30,40,50,60,70,80,90,100]"
+                                         ng-style="{backgroundColor:'{{n/'100' | map_colour}}'}">{{n}}
+                                    </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      </div>
+                 
+                  <div class="col-md-5">    
+                  
+                  <div class="panel panel-default">
+                     <div class="panel panel-body">
+                        <div class="regionlist">
+                           <div ng-repeat="(key,region) in dummyData"
+                                ng-class="{active:hoverRegion==key}" 
+                                ng-mouseover="changeHoverRegion(key)"
+                                ng-mouseleave="changeHoverRegion(0)">
+                                <div>{{key}}: </div>
+                                <div>{{region.value}}</div>
+
+                            </div>
+                        </div>
+                      </div>
+                  </div>
+                 </div>
+                </div>
+                <label for="trends" style="font-family:verdana;">Select a trend: </label>
+                <select name="trends" id="trends" ng-model="selectedtrend" ng-options="y for (x, y) in trendoptions" ng-change="createDummyData()"> 
+                </select>
+              </div>
+            </div>
+          </p>
+        </md-content>
+      </md-tab>
+      <md-tab label="Bar Graph">
+        <md-content class="md-padding">
+          <h1 class="md-display-2">Bar Graph</h1>
+          <p>
+            <div class="jumbotron text-center">
+              <div class="container">
+              <h2 style="font-family:verdana;">Trend data represented as a bar graph</h2>
+              <canvas id="tables" height="100" width="250" class="chart chart-bar" chart-data="chartData" chart-labels="labels" chart-series="series" options="options">
+              </canvas> 
+              <label for="trends" style="font-family:verdana;">Select a trend: </label>
+               <select name="trends" id="trends" ng-model="selectedtrend" ng-options="y for (x, y) in trendoptions" ng-change="createDummyData()"> 
+               </select>
+              </div>
+            </div>
+          </p>
+        </md-content>
+      </md-tab>
+      <md-tab label="Doughnut Chart">
+        <md-content class="md-padding">
+          <h1 class="md-display-2">Doughnut Chart</h1>
+          <p>
+            <div class="jumbotron text-center">
+              <div class="container">
+                <h2 style="font-family:verdana;">Trend data represented as a doughnut chart</h2>
+                  <canvas id="doughnut" height="100" width="250" class="chart chart-doughnut" chart-data="pieData" chart-labels="labels" chart-series="series" options="options">
+                  </canvas> 
+                  <br>
+                  <label for="trends" style="font-family:verdana;">Select a trend: </label>
+                  <select name="trends" id="trends" ng-model="selectedtrend" ng-options="y for (x, y) in trendoptions" ng-change="createDummyData()"> 
+                  </select>
+              </div>
+            </div>
+          </p>
+        </md-content>
+      </md-tab>
+      <md-tab label="Pie Chart">
+        <md-content class="md-padding">
+          <h1 class="md-display-2">Pie Chart</h1>
+          <p>
+            <div class="jumbotron text-center">
+              <div class="container">
+                <h2 style="font-family:verdana;">Trend data represented as a pie chart</h2>
+                  <canvas id="pie" height="100" width="250" class="chart chart-pie" chart-data="pieData" chart-labels="labels" chart-series="series" options="options">
+                  </canvas> 
+                  <br>
+                  <label for="trends" style="font-family:verdana;">Select a trend: </label>
+                  <select name="trends" id="trends" ng-model="selectedtrend" ng-options="y for (x, y) in trendoptions" ng-change="createDummyData()"> 
+                  </select>
+              </div>
+            </div>
+          </p>
+        </md-content>
+      </md-tab>
+      <md-tab label="Polar Area Chart">
+        <md-content class="md-padding">
+          <h1 class="md-display-2">Polar Area Chart</h1>
+          <p>
+            <div class="text-center">
+              <div class="jumbotron container">
+                <h2 style="font-family:verdana;">Trend data represented as a polar area chart</h2>
+                  <canvas id="polar-area" height="100" width="200" class="chart chart-polar-area" chart-data="pieData" chart-labels="labels" chart-series="series" options="options">
+                  </canvas> 
+                  <label for="trends" style="font-family:verdana;">Select a trend: </label>
+                  <select name="trends" id="trends" ng-model="selectedtrend" ng-options="y for (x, y) in trendoptions" ng-change="createDummyData()"> 
+                  </select>
+              </div>
+            </div>
+          </p>
+        </md-content>
+      </md-tab>
+      <md-tab label="Radar Chart">
+        <md-content class="md-padding">
+          <h1 class="md-display-2">Radar Chart</h1>
+          <p>
+            <div class="jumbotron text-center">
+              <div class="container">
+                <h2 style="font-family:verdana;">Trend data represented as a radar chart</h2>
+                  <canvas id="radar" height="100" width="200" class="chart chart-radar" chart-data="chartData" chart-labels="labels" chart-series="series" options="options">
+                  </canvas> 
+                  <br>
+                  <label for="trends" style="font-family:verdana;">Select a trend: </label>
+                  <select name="trends" id="trends" ng-model="selectedtrend" ng-options="y for (x, y) in trendoptions" ng-change="createDummyData()"> 
+                  </select>
+              </div>
+            </div>
+          </p>
+        </md-content>
+      </md-tab>
+    </md-tabs>
+  </md-content>
+
+
 
 <!--
   <div class="row">
@@ -109,18 +208,6 @@
 -->
 
   <div class="well">
-    <h2>Trend Application Documentation</h2>
-    <p>
-      Further Reading:
-      <ul>
-        <li>Concept Report
-        </li>
-        <li>Specification Paper
-        </li>
-        <li>Design Documentation
-        </li>
-      </ul>
-    </p>
     <br>Sharing is winning!
     <br>Team Six
     <br>
