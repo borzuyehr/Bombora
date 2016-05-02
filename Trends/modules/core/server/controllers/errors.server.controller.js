@@ -1,5 +1,7 @@
 'use strict';
 
+// Setup server error handling
+
 /**
  * Get unique error field name
  */

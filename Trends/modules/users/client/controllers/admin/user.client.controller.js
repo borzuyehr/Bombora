@@ -1,5 +1,6 @@
 'use strict';
 
+// Set up as administrator functionality
 angular.module('users.admin').controller('UserController', ['$scope', '$state', 'Authentication', 'userResolve',
   function ($scope, $state, Authentication, userResolve) {
     $scope.authentication = Authentication;

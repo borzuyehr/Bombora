@@ -1,5 +1,6 @@
 'use strict';
 
+// Setup password verification
 angular.module('users')
   .directive('passwordVerify', [function() {
     return {

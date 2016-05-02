@@ -1,9 +1,13 @@
 'use strict';
 
-module.exports = function (app) {
-  // Root routing
-  var core = require('../controllers/core.server.controller');
+// Handling all application routing for the server
+// Root routing
+var core = require('../controllers/core.server.controller');
 
+module.exports = function (app) {
+  
+  /*app.route('/api/core')
+    .post(core.creates);*/
   // Define error pages
   app.route('/server-error').get(core.renderServerError);
 

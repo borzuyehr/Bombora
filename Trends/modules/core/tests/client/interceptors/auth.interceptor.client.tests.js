@@ -1,5 +1,7 @@
 'use strict';
 
+/* Run test on authorization interception */
+
 (function() {
   describe('authInterceptor', function() {
     //Initialize global variables
@@ -24,6 +26,7 @@
       spyOn($state,'transitionTo');
     }));
 
+    // List exceptions
     it('Auth Interceptor should be object', function() {
       expect(typeof authInterceptor).toEqual('object');
     });
@@ -36,6 +39,7 @@
       expect(httpProvider.interceptors).toContain('authInterceptor');
     });
 
+    // Handle exceptions
     describe('Forbidden Interceptor', function() {
       it('should redirect to forbidden route', function () {
         var response = {

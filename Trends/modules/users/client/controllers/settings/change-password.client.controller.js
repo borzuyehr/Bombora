@@ -1,5 +1,6 @@
 'use strict';
 
+// Handle the user changing password
 angular.module('users').controller('ChangePasswordController', ['$scope', '$http', 'Authentication', 'PasswordValidator',
   function ($scope, $http, Authentication, PasswordValidator) {
     $scope.user = Authentication.user;
