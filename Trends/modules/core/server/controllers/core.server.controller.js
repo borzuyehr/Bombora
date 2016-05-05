@@ -13,13 +13,15 @@ var path = require('path'),
 
 
   
- Trend.aggregate([
+Trend.aggregate([
         {$limit: 100000},
         { $match: {'Metro Area':{$regex: 'california'}} },
         { $group: {
           _id: null,
           AverageCompositeScore: {$avg: '$Composite Score'}
-        } } ],
+        } },
+
+        ],
     function (err, results) {
         if (err) {
             console.error(err);
@@ -29,6 +31,75 @@ var path = require('path'),
     }
     
   );
+
+Trend.aggregate([
+        {$limit: 100000},
+        { $match: {$or: [{'Metro Area':{$regex: 'alabama'}},
+                         {'Metro Area':{$regex: 'alaska'}},
+                         {'Metro Area':{$regex: 'arizona'}},
+                         {'Metro Area':{$regex: 'arkansas'}},
+                         {'Metro Area':{$regex: 'california'}},
+                         {'Metro Area':{$regex: 'colorado'}}, 
+                         {'Metro Area':{$regex: 'connecticut'}},
+                         {'Metro Area':{$regex: 'delaware'}},
+                         {'Metro Area':{$regex: 'florida'}},
+                         {'Metro Area':{$regex: 'georgia'}},
+                         {'Metro Area':{$regex: 'hawaii'}},
+                         {'Metro Area':{$regex: 'idaho'}},
+                         {'Metro Area':{$regex: 'illinois'}},
+                         {'Metro Area':{$regex: 'indiana'}},
+                         {'Metro Area':{$regex: 'iowa'}},
+                         {'Metro Area':{$regex: 'kansas'}},
+                         {'Metro Area':{$regex: 'kentucky'}},
+                         {'Metro Area':{$regex: 'louisiana'}},
+                         {'Metro Area':{$regex: 'maine'}},
+                         {'Metro Area':{$regex: 'maryland'}},
+                         {'Metro Area':{$regex: 'massachusetts'}},
+                         {'Metro Area':{$regex: 'michigan'}},
+                         {'Metro Area':{$regex: 'minnesota'}},
+                         {'Metro Area':{$regex: 'mississippi'}},
+                         {'Metro Area':{$regex: 'missouri'}},
+                         {'Metro Area':{$regex: 'montana'}},
+                         {'Metro Area':{$regex: 'nebraska'}},
+                         {'Metro Area':{$regex: 'nevada'}},
+                         {'Metro Area':{$regex: 'new hampshire'}},
+                         {'Metro Area':{$regex: 'new jersey'}},
+                         {'Metro Area':{$regex: 'new mexico'}},
+                         {'Metro Area':{$regex: 'new york'}},
+                         {'Metro Area':{$regex: 'north carolina'}},
+                         {'Metro Area':{$regex: 'north dakota'}},
+                         {'Metro Area':{$regex: 'ohio'}},
+                         {'Metro Area':{$regex: 'oklahoma'}},
+                         {'Metro Area':{$regex: 'oregon'}},
+                         {'Metro Area':{$regex: 'pennsylvania'}},
+                         {'Metro Area':{$regex: 'rhode island'}},
+                         {'Metro Area':{$regex: 'south carolina'}},
+                         {'Metro Area':{$regex: 'south dakota'}},
+                         {'Metro Area':{$regex: 'tennessee'}},
+                         {'Metro Area':{$regex: 'texas'}},
+                         {'Metro Area':{$regex: 'utah'}},
+                         {'Metro Area':{$regex: 'vermont'}},
+                         {'Metro Area':{$regex: 'virginia'}},
+                         {'Metro Area':{$regex: 'washington'}},
+                         {'Metro Area':{$regex: 'west virginia'}},
+                         {'Metro Area':{$regex: 'wisconsin'}},
+                         {'Metro Area':{$regex: 'wyoming'}}
+                         ] } },
+        { $group: {
+          _id: {'Metro Area': '$Metro Area'},
+          AverageCompositeScore: {$avg: '$Composite Score'}
+        } },],
+    function (err, results) {
+        if (err) {
+            console.error(err);
+        } else {
+            console.log(results);
+        }
+    }
+    
+  );
+
+ 
 
 
 
